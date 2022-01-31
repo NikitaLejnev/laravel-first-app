@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Example 3-2. Sample website
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('about', function () {
+    return view('about');
+});
+
+Route::get('products', function () {
+    return view('products');
+});
+
+Route::get('services', function () {
+    return view('services');
 });
