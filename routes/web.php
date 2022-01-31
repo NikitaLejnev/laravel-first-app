@@ -61,3 +61,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('users/{id}/friends', function ($id) {
 // 
 // })
+//
+// Example 3-6. Optional route parameters
+// 
+// Route::get('users/{id}/friends', function($id) {});
+//
