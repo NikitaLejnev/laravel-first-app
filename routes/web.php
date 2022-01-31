@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Extension\Helper;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,3 +77,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('users/{id}/{slug}', function ($id, $slug) {
 // })->where('id' => '[0-9]+', 'slug' => '[A-Za-z]+');
+
+// Example 3-8. The url() helper
+
+// <a href="<?php echo url('/'); 
+?>">
+<!-- // Outputs <a href="http://myapp.com/"> -->
