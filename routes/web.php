@@ -56,3 +56,8 @@ use Illuminate\Support\Facades\Route;
 //
 // Route::get('/', 'WelcomeController@index');
 //
+// Example 3-5. Route parameters
+// 
+// Route::get('users/{id}/friends', function ($id) {
+// 
+// })
