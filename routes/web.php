@@ -15,18 +15,39 @@ use Illuminate\Support\Facades\Route;
 
 // Example 3-2. Sample website
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('about', function () {
+//     return view('about');
+// });
+
+// Route::get('products', function () {
+//     return view('products');
+// });
+
+// Route::get('services', function () {
+//     return view('services');
+// });
+
+// Example 3-3. Route verbs
+
 Route::get('/', function () {
-    return view('welcome');
+    return 'Hello, World!';
 });
 
-Route::get('about', function () {
-    return view('about');
+Route::post('/', function () {
 });
 
-Route::get('products', function () {
-    return view('products');
+Route::put('/', function () {
 });
 
-Route::get('services', function () {
-    return view('services');
+Route::delete('/', function () {
+});
+
+Route::any('/', function () {
+});
+
+Route::match('/', function () {
 });
