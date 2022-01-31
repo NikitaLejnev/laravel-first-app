@@ -33,21 +33,26 @@ use Illuminate\Support\Facades\Route;
 
 // Example 3-3. Route verbs
 
-Route::get('/', function () {
-    return 'Hello, World!';
-});
+// Route::get('/', function () {
+//     return 'Hello, World!';
+// });
 
-Route::post('/', function () {
-});
+// Route::post('/', function () {
+// });
 
-Route::put('/', function () {
-});
+// Route::put('/', function () {
+// });
 
-Route::delete('/', function () {
-});
+// Route::delete('/', function () {
+// });
 
-Route::any('/', function () {
-});
+// Route::any('/', function () {
+// });
 
-Route::match('/', function () {
-});
+// Route::match('/', function () {
+// });
+
+// Example 3-4. Routes calling controller methods
+//
+// Route::get('/', 'WelcomeController@index');
+//
