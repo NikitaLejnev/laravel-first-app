@@ -140,3 +140,14 @@ Route::domain('api.myapp.com')->group(function () {
         //
     });
 }); -->
+
+<!-- Example 3-15. Parametrized subdomain routing
+
+Route::domain('{account}.myapp.com')->group(function () {
+    Route::get('/', function ($account) {
+
+    });
+    Route::get('users/{id}', function ($account, $id) {
+
+    });
+}); -->
