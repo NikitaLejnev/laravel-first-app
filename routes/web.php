@@ -215,3 +215,6 @@ Route::view('/', 'welcome');
 
 Passing simple data to Route::view()
 Route::view('/', 'welcome', ['User' => 'Michael']); -->
+
+<!-- Sharing variables by using view composers
+view()->share('variableName', 'variableValue'); -->
