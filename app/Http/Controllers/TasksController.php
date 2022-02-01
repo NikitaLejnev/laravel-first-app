@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class TasksController extends Controller
 {
-    // Example 3-22. Simple controller
+    // // Example 3-22. Simple controller
 
-    public function index()
-    {
-        return 'Hello, World!';
-    }
+    // public function index()
+    // {
+    //     return 'Hello, World!';
+    // }
+    //
+    // Example 3-24. Common controller method example
+    // public function index()
+    // {
+    //     return view('tasks.index')
+    //         ->with('tasks', Task::all());
+    // }
 }
