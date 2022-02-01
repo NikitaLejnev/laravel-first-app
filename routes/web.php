@@ -90,7 +90,7 @@ use Illuminate\Support\Facades\Route;
 <!-- Route::get('members/{id}', 'MembersController@show')->name('members.show'); -->
 
 <!-- // Linking the route in a view using the route() helper: -->
-<!-- <a href="<?php echo route('members.show', ['id' => 14]); ?>"> -->
+<!-- <a href="?php echo route('members.show', ['id' => 14]); ?>"> -->
 
 <!-- Example 3-10. Defining a route group
 
