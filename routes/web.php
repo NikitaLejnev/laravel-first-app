@@ -200,3 +200,10 @@ class InvitationController
 Route::get('/', function () {
     return view('home');
 }); -->
+
+<!-- Example 3-19. Passing variables to views
+
+Route::get('tasks', function () {
+    return view('tasks.index')
+        ->with('tasks', Task::all());
+}); -->
