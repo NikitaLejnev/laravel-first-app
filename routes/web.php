@@ -92,4 +92,24 @@ use Illuminate\Support\Facades\Route;
 <!-- // Linking the route in a view using the route() helper: -->
 <!-- <a href="<?php echo route('members.show', ['id' => 14]); ?>"> -->
 
-Exam
+<!-- Example 3-10. Defining a route group
+
+Route::group(function () {
+  Route::get('hello', function() {
+    return 'Hello';
+  });
+  Route::get('world', function () {
+    return 'World';
+  });
+}); -->
+
+<!-- Example 3-11. Restricting a group of routes to logged-in users only
+
+Route::middleware('auth')->group(function() {
+  Route::get('dashboard', function () {
+    return view('dashboard');
+  });
+  Route::get('account', function () {
+    return view('account');
+  });
+}); -->
