@@ -151,3 +151,13 @@ Route::domain('{account}.myapp.com')->group(function () {
 
     });
 }); -->
+
+<!-- Example 3-17. Route group name prefixes
+
+Route::name('users.')->prefix('users')->group(function () {
+    Route::name('comments.')->prefix('comments')->group(function () {
+        Route::get('{id}', function () {
+            
+        })->name('show');
+    });
+}); -->
