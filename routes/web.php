@@ -121,3 +121,14 @@ Route::middleware('auth:api', 'throttle:60,1')->group(function () {
         
     });
 }); -->
+
+<!-- Example 3-13. Prefixing a group of routes
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', function () {
+        Handles the path /dashboard
+    });
+    Route::get('users', function () {
+        Handles the path /dashboard/users
+    });
+}); -->
