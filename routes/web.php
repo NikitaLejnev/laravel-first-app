@@ -113,3 +113,11 @@ Route::middleware('auth')->group(function() {
     return view('account');
   });
 }); -->
+
+<!-- Example 3-12. Applying the rate limiting middleware to a route
+
+Route::middleware('auth:api', 'throttle:60,1')->group(function () {
+    Route::get('/profile', function () {
+        
+    });
+}); -->
