@@ -231,6 +231,8 @@ use Illuminate\Support\Facades\Route;
 // view()->share('variableName', 'variableValue'); -->
 
 // Example 3-23. Route for the simple controller -->
-use App\Http\Controllers\TasksController;
-
-Route::get('/', [TasksController::class, 'index']);
+// Route::get('/', TasksController);
+//
+// Example 3-25. Binding basic form actions
+Route::get('tasks/create', 'App\Http\Controllers\TasksController@create');
+Route::get('tasks', 'App\Http\Controllers\TasksController@store');
