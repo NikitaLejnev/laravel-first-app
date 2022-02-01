@@ -132,3 +132,11 @@ Route::prefix('dashboard')->group(function () {
         Handles the path /dashboard/users
     });
 }); -->
+
+<!-- Example 3-14. Subdomain routing
+
+Route::domain('api.myapp.com')->group(function () {
+    Route::get('/', function () {
+        //
+    });
+}); -->
