@@ -207,3 +207,11 @@ Route::get('tasks', function () {
     return view('tasks.index')
         ->with('tasks', Task::all());
 }); -->
+
+<!-- Example 3-20. Route::view()
+
+Returns resources/views/welcome.blade.php
+Route::view('/', 'welcome');
+
+Passing simple data to Route::view()
+Route::view('/', 'welcome', ['User' => 'Michael']); -->
