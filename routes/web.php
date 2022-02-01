@@ -58,20 +58,20 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', 'WelcomeController@index');
 //
 // Example 3-5. Route parameters
-// 
+//
 // Route::get('users/{id}/friends', function ($id) {
-// 
+//
 // })
 //
 // Example 3-6. Optional route parameters
-// 
+//
 // Route::get('users/{id}/friends', function($id) {});
 //
 // Example 3-7. Regular expression route constraints
-// 
-// Route::get('users/{id}', function ($id) { 
+//
+// Route::get('users/{id}', function ($id) {
 // })->where('id', '[0-9]+');j
-// 
+//
 // Route::get('users/{username}', function ($username) {
 // })->where('username', '[A-Za-z]+');
 
@@ -80,7 +80,7 @@ use Illuminate\Support\Facades\Route;
 
 // Example 3-8. The url() helper
 
-// <a href="<?php echo url('/'); 
+// <a href="<?php echo url('/');
 ?>">
 <!-- // Outputs <a href="http://myapp.com/"> -->
 
@@ -118,7 +118,7 @@ Route::middleware('auth')->group(function() {
 
 Route::middleware('auth:api', 'throttle:60,1')->group(function () {
     Route::get('/profile', function () {
-        
+
     });
 }); -->
 
@@ -157,7 +157,24 @@ Route::domain('{account}.myapp.com')->group(function () {
 Route::name('users.')->prefix('users')->group(function () {
     Route::name('comments.')->prefix('comments')->group(function () {
         Route::get('{id}', function () {
-            
+
         })->name('show');
     });
 }); -->
+
+<!-- To build a signed URL, the accessed route must have a name
+Route::get('invitations/{invitation}/{answer}', 'InvitationController')
+    ->name('invitations');
+
+Normal link
+URL::route('invitations', ['invitation' => 12345, 'answer' => 'yes']);
+
+Signed link
+URL::signedRoute('invitations', ['invitation' => 12345, 'answer' => 'yes']);
+
+Temporary signed link
+URL::temporarySignedRoute(
+    'invitations',
+    now()->addHours(4),
+    ['invitation' => 12345, 'answer' => 'yes']
+); -->
