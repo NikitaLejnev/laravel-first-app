@@ -178,3 +178,19 @@ URL::temporarySignedRoute(
     now()->addHours(4),
     ['invitation' => 12345, 'answer' => 'yes']
 ); -->
+
+<!-- Protecting with middleware:
+Route::get('invitations/{invitation}/{answer}', 'InvitationController')
+    ->name('invitations')
+    ->middleware('signed');
+
+Or manually:
+class InvitationController
+{
+    public function __invoke(Invitation $invitation, $answer, Request $request)
+    {
+        if (! $request->hasValidSignature()) {
+            abort(403);
+        }
+    }
+} -->
