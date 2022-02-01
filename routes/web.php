@@ -80,141 +80,157 @@ use Illuminate\Support\Facades\Route;
 
 // Example 3-8. The url() helper
 
-// <a href="<?php echo url('/');
-?>">
-<!-- // Outputs <a href="http://myapp.com/"> -->
+// <a href="<?php echo url('/');>">
+//  // Outputs <a href="http://myapp.com/"> -->
 
-<!-- Example 3-9. Defining route namespace -->
+//  Example 3-9. Defining route namespace -->
 
-<!-- // Defining a route with name() in routes/web.php: -->
-<!-- Route::get('members/{id}', 'MembersController@show')->name('members.show'); -->
+//  // Defining a route with name() in routes/web.php: -->
+//  Route::get('members/{id}', 'MembersController@show')->name('members.show'); -->
 
-<!-- // Linking the route in a view using the route() helper: -->
-<!-- <a href="?php echo route('members.show', ['id' => 14]); ?>"> -->
+//  // Linking the route in a view using the route() helper: -->
+//  <a href="?php echo route('members.show', ['id' => 14]);
 
-<!-- Example 3-10. Defining a route group
+//
+//  Example 3-10. Defining a route group
 
-Route::group(function () {
-  Route::get('hello', function() {
-    return 'Hello';
-  });
-  Route::get('world', function () {
-    return 'World';
-  });
-}); -->
+// Route::group(function () {
+//   Route::get('hello', function() {
+//     return 'Hello';
+//   });
+//   Route::get('world', function () {
+//     return 'World';
+//   });
+// }); -->
 
-<!-- Example 3-11. Restricting a group of routes to logged-in users only
+//
+//  Example 3-11. Restricting a group of routes to logged-in users only
 
-Route::middleware('auth')->group(function() {
-  Route::get('dashboard', function () {
-    return view('dashboard');
-  });
-  Route::get('account', function () {
-    return view('account');
-  });
-}); -->
+// Route::middleware('auth')->group(function() {
+//   Route::get('dashboard', function () {
+//     return view('dashboard');
+//   });
+//   Route::get('account', function () {
+//     return view('account');
+//   });
+// }); -->
 
-<!-- Example 3-12. Applying the rate limiting middleware to a route
+//
+//  Example 3-12. Applying the rate limiting middleware to a route
 
-Route::middleware('auth:api', 'throttle:60,1')->group(function () {
-    Route::get('/profile', function () {
+// Route::middleware('auth:api', 'throttle:60,1')->group(function () {
+//     Route::get('/profile', function () {
 
-    });
-}); -->
+//     });
+// }); -->
 
-<!-- Example 3-13. Prefixing a group of routes
+//
+//  Example 3-13. Prefixing a group of routes
 
-Route::prefix('dashboard')->group(function () {
-    Route::get('/', function () {
-        Handles the path /dashboard
-    });
-    Route::get('users', function () {
-        Handles the path /dashboard/users
-    });
-}); -->
+// Route::prefix('dashboard')->group(function () {
+//     Route::get('/', function () {
+//         Handles the path /dashboard
+//     });
+//     Route::get('users', function () {
+//         Handles the path /dashboard/users
+//     });
+// }); -->
 
-<!-- Example 3-14. Subdomain routing
+//
+//  Example 3-14. Subdomain routing
 
-Route::domain('api.myapp.com')->group(function () {
-    Route::get('/', function () {
-        //
-    });
-}); -->
+// Route::domain('api.myapp.com')->group(function () {
+//     Route::get('/', function () {
+//         //
+//     });
+// }); -->
 
-<!-- Example 3-15. Parametrized subdomain routing
+//
+//  Example 3-15. Parametrized subdomain routing
 
-Route::domain('{account}.myapp.com')->group(function () {
-    Route::get('/', function ($account) {
+// Route::domain('{account}.myapp.com')->group(function () {
+//     Route::get('/', function ($account) {
 
-    });
-    Route::get('users/{id}', function ($account, $id) {
+//     });
+//     Route::get('users/{id}', function ($account, $id) {
 
-    });
-}); -->
+//     });
+// }); -->
 
-<!-- Example 3-17. Route group name prefixes
+//
+//  Example 3-17. Route group name prefixes
 
-Route::name('users.')->prefix('users')->group(function () {
-    Route::name('comments.')->prefix('comments')->group(function () {
-        Route::get('{id}', function () {
+// Route::name('users.')->prefix('users')->group(function () {
+//     Route::name('comments.')->prefix('comments')->group(function () {
+//         Route::get('{id}', function () {
 
-        })->name('show');
-    });
-}); -->
+//         })->name('show');
+//     });
+// }); -->
 
-<!-- To build a signed URL, the accessed route must have a name
-Route::get('invitations/{invitation}/{answer}', 'InvitationController')
-    ->name('invitations');
+//
+//  To build a signed URL, the accessed route must have a name
+// Route::get('invitations/{invitation}/{answer}', 'InvitationController')
+//     ->name('invitations');
 
-Normal link
-URL::route('invitations', ['invitation' => 12345, 'answer' => 'yes']);
+// Normal link
+// URL::route('invitations', ['invitation' => 12345, 'answer' => 'yes']);
 
-Signed link
-URL::signedRoute('invitations', ['invitation' => 12345, 'answer' => 'yes']);
+// Signed link
+// URL::signedRoute('invitations', ['invitation' => 12345, 'answer' => 'yes']);
 
-Temporary signed link
-URL::temporarySignedRoute(
-    'invitations',
-    now()->addHours(4),
-    ['invitation' => 12345, 'answer' => 'yes']
-); -->
+// Temporary signed link
+// URL::temporarySignedRoute(
+//     'invitations',
+//     now()->addHours(4),
+//     ['invitation' => 12345, 'answer' => 'yes']
+// ); -->
 
-<!-- Protecting with middleware:
-Route::get('invitations/{invitation}/{answer}', 'InvitationController')
-    ->name('invitations')
-    ->middleware('signed');
+//
+//  Protecting with middleware:
+// Route::get('invitations/{invitation}/{answer}', 'InvitationController')
+//     ->name('invitations')
+//     ->middleware('signed');
 
-Or manually:
-class InvitationController
-{
-    public function __invoke(Invitation $invitation, $answer, Request $request)
-    {
-        if (! $request->hasValidSignature()) {
-            abort(403);
-        }
-    }
-} -->
+// Or manually:
+// class InvitationController
+// {
+//     public function __invoke(Invitation $invitation, $answer, Request $request)
+//     {
+//         if (! $request->hasValidSignature()) {
+//             abort(403);
+//         }
+//     }
+// } -->
 
-<!-- Example 3-18. Simple view() usage
+//
+//  Example 3-18. Simple view() usage
 
-Route::get('/', function () {
-    return view('home');
-}); -->
+// Route::get('/', function () {
+//     return view('home');
+// }); -->
 
-<!-- Example 3-19. Passing variables to views
+//
+//  Example 3-19. Passing variables to views
 
-Route::get('tasks', function () {
-    return view('tasks.index')
-        ->with('tasks', Task::all());
-}); -->
+// Route::get('tasks', function () {
+//     return view('tasks.index')
+//         ->with('tasks', Task::all());
+// }); -->
 
-<!-- Example 3-20. Route::view()
+//
+//  Example 3-20. Route::view()
 
-Returns resources/views/welcome.blade.php
-Route::view('/', 'welcome');
+// Returns resources/views/welcome.blade.php
+// Route::view('/', 'welcome');
 
-Passing simple data to Route::view()
-Route::view('/', 'welcome', ['User' => 'Michael']); -->
+// Passing simple data to Route::view()
+// Route::view('/', 'welcome', ['User' => 'Michael']); -->
 
-<!-- Sharing variables by using view composers
-view()->share('variableName', 'variableValue'); -->
+// Sharing variables by using view composers
+// view()->share('variableName', 'variableValue'); -->
+
+// Example 3-23. Route for the simple controller -->
+use App\Http\Controllers\TasksController;
+
+Route::get('/', [TasksController::class, 'index']);
