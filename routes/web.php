@@ -194,3 +194,9 @@ class InvitationController
         }
     }
 } -->
+
+<!-- Example 3-18. Simple view() usage
+
+Route::get('/', function () {
+    return view('home');
+}); -->
